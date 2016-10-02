@@ -44,7 +44,7 @@ function MenuSearchService($http) {
   service.getMatchedMenuItems = function (searchTerm) {
     return $http({url:'https://davids-restaurant.herokuapp.com/menu_items.json'}).then(function (result) {
       var foundItems = [];
-      var items = response.data.menu_items;
+      var items = result.data.menu_items;
       for (var i = 0; i < items.length; ++i) {
         if (items[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) != -1) {
           foundItems.push(items[i]);
