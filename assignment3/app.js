@@ -6,7 +6,6 @@ angular.module('NarrowItDownApp', [])
 .service('MenuSearchService', MenuSearchService)
 .directive('foundItems', FoundItemsDirective);
 
-
 function FoundItemsDirective() {
   var ddo = {
     restrict: 'E',
@@ -35,6 +34,7 @@ function NarrowItDownController(MenuSearchService) {
   ctrl.getMatchedMenuItems = function () {
     if (ctrl.searchTerm != '') {
       ctrl.found = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm.toLowerCase());
+      console.log(ctrol.found.length);
     } else {
       ctrl.found = [];
     }
