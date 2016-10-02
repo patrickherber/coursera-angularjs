@@ -15,9 +15,9 @@ function FoundItemsDirective() {
       found: '<',
       onRemove: '&'
     },
-    controller: FoundItemsDirectiveController,
-    controllerAs: 'dirCtrl',
-    bindToController: true
+    //controller: FoundItemsDirectiveController,
+    //controllerAs: 'dirCtrl',
+    //bindToController: true
   };
   return ddo;
 }
@@ -37,11 +37,11 @@ function NarrowItDownController(MenuSearchService) {
       var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm.toLowerCase());
       promise.then(function (response) {
         ctrl.found = response;
+        console.log(ctrl.found.length);
       })
       .catch(function (error) {
         console.log("Something went terribly wrong.");
       });
-      console.log(ctrl.found.length);
     } else {
       ctrl.found = [];
     }
