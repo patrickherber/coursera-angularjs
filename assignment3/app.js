@@ -49,7 +49,6 @@ function MenuSearchService($http) {
       for (var i = 0; i < items.length; ++i) {
         if (items[i].description.toLowerCase().indexOf(searchTerm) != -1) {
           foundItems.push(items[i]);
-        } else {
           console.log(items[i].description);
         }
       }
