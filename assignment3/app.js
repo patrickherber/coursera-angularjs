@@ -4,7 +4,8 @@
 angular.module('NarrowItDownApp', [])
 .controller('NarrowItDownController', NarrowItDownController)
 .service('MenuSearchService', MenuSearchService)
-.directive('foundItems', FoundItemsDirective);
+.directive('foundItems', FoundItemsDirective)
+;
 
 function FoundItemsDirective() {
   var ddo = {
@@ -33,15 +34,21 @@ function NarrowItDownController(MenuSearchService) {
 
   ctrl.getMatchedMenuItems = function () {
     if (ctrl.searchTerm != '') {
-      ctrl.found = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm.toLowerCase());
-      console.log(ctrol.found.length);
+      var promise = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm.toLowerCase());
+      promise.then(function (response) {
+        ctrl.found = response;
+      })
+      .catch(function (error) {
+        console.log("Something went terribly wrong.");
+      });
+      console.log(ctrl.found.length);
     } else {
       ctrl.found = [];
     }
   };
 
   ctrl.remove = function(index) {
-    ctrl.splice(index, 1);
+    ctrl.found.splice(index, 1);
   };
 }
 
@@ -56,7 +63,7 @@ function MenuSearchService($http) {
       for (var i = 0; i < items.length; ++i) {
         if (items[i].description.toLowerCase().indexOf(searchTerm) != -1) {
           foundItems.push(items[i]);
-          console.log(items[i].description);
+          //console.log(items[i].description);
         }
       }
       return foundItems;
