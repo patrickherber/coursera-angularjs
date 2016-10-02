@@ -1,11 +1,11 @@
 <div>
   <ol>
-    <li ng-repeat="item in found">
+    <li ng-repeat="item in ctrl.found">
       {{ item.name }}<br/>
       {{ item.short_name }}<br/>
       {{ item.description }}<br/>
-      <button ng-click="list.onRemove({index: $index});">Remove Item</button>
+      <button ng-click="ctrl.onRemove({index: $index});">Remove Item</button>
     </li>
   </ol>
 </div>
-<div class="error" ng-if="found.length == 0">Not found</div>
+<div class="error" ng-if="ctrl.found.length == 0">Not found</div>
