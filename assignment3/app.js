@@ -27,7 +27,7 @@ function NarrowItDownController(MenuSearchService) {
 
   ctrl.getMatchedMenuItems = function () {
     if (ctrl.searchTerm != '') {
-      ctrl.found = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm);
+      ctrl.found = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm.toLowerCase());
     } else {
       ctrl.found = [];
     }
@@ -47,9 +47,8 @@ function MenuSearchService($http) {
       var foundItems = [];
       var items = result.data.menu_items;
       for (var i = 0; i < items.length; ++i) {
-        if (items[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) != -1) {
+        if (items[i].description.toLowerCase().indexOf(searchTerm) != -1) {
           foundItems.push(items[i]);
-
         } else {
           console.log(items[i].description);
         }
