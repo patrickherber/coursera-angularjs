@@ -16,7 +16,7 @@ function FoundItemsDirective() {
       onRemove: '&'
     },
     controller: FoundItemsDirectiveController,
-    controllerAs: 'list',
+    controllerAs: 'dirCtrl',
     bindToController: true
   };
   return ddo;
