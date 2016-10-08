@@ -30,7 +30,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
     .state('items', {
       url: '/items',
-      controller: ItemsController,
+      controller: 'ItemsController as ctrl',
       templateUrl: 'src/items.html'
     });
 }
