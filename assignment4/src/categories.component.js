@@ -1,6 +1,8 @@
 (function () {
+'use strict';
 
-angular.component('categories', {
+angular.module('data')
+.component('categories', {
   templateUrl: 'src/categories.template.html'
 });
 

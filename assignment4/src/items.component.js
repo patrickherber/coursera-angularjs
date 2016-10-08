@@ -1,6 +1,8 @@
 (function () {
+'use strict';
 
-angular.component('items', {
+angular.module('data')
+.component('items', {
   templateUrl: 'src/items.template.html'
 });
 
