@@ -19,7 +19,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
     .state('categories', {
       url: '/categories',
-      controller: CategoriesController,
+      controller: 'CategoriesController as ctrl',
       resolve: {
         categories: ['MenuDataService', function(MenuDataService) {
           return MenuDataService.getAllCategories();
