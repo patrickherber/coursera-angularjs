@@ -8,7 +8,7 @@ function HomeController() {
   ctrl = this;
   var cancellers = [];
 
-  $ctrl.$onInit = function () {
+  ctrl.$onInit = function () {
     var cancel = $rootScope.$on('$stateChangeStart',
     function(event, toState, toParams, fromState, fromParams, options){
       console.log('Start', toState);
