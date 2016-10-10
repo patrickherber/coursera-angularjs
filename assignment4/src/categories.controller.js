@@ -6,8 +6,8 @@ angular.module('MenuApp')
 
 CategoriesController.$inject = ['categories'];
 function CategoriesController(categories) {
-  ctrl = this;
-  this.categories = categories;
+  var ctrl = this;
+  ctrl.categories = categories;
 
   // var cancellers = [];
   // var cancel = $rootScope.$on('$stateChangeError',
