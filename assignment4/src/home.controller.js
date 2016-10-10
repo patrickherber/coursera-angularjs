@@ -6,10 +6,22 @@ angular.module('MenuApp')
 
 function HomeController() {
   ctrl = this;
+  var cancellers = [];
 
   $ctrl.$onInit = function () {
-    var cancellers = [];
-    var cancel = $rootScope.$on('$stateChangeError',
+    var cancel = $rootScope.$on('$stateChangeStart',
+    function(event, toState, toParams, fromState, fromParams, options){
+      console.log('Start', toState);
+    });
+    cancellers.push(cancel);
+
+    cancel = $rootScope.$on('$stateChangeSuccess',
+    function(event, toState, toParams, fromState, fromParams){
+      console.log('Success', toState);
+    });
+    cancellers.push(cancel);
+
+    cancel = $rootScope.$on('$stateChangeError',
     function(event, toState, toParams, fromState, fromParams, error){
       console.log(error);
     });
