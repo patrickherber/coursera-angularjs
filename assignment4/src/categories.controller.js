@@ -8,7 +8,7 @@ CategoriesController.$inject = ['categories'];
 function CategoriesController(categories) {
   var ctrl = this;
   ctrl.categories = categories;
-  console.log(categories);
+  //console.log(categories);
 
   // var cancellers = [];
   // var cancel = $rootScope.$on('$stateChangeError',
