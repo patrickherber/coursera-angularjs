@@ -20,6 +20,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     .state('categories', {
       url: '/categories',
       controller: 'CategoriesController as ctrl',
+      templateUrl: 'src/categories.html',
       resolve: {
         categories: ['MenuDataService', function(MenuDataService) {
           return [];
@@ -27,8 +28,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
           //   return result.data;
           // });
         }]
-      },
-      templateUrl: 'src/categories.html'
+      }
     })
 
     .state('items', {
