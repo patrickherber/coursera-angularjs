@@ -14,6 +14,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
+      controller: 'HomeController as ctrl',
       templateUrl: 'src/home.html'
     })
 
