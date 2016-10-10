@@ -32,9 +32,20 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     })
 
     .state('items', {
-      url: '/items',
+      url: '/items/{category}',
       controller: 'ItemsController as ctrl',
       templateUrl: 'src/items.html'
+      resolve: {
+        items: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
+          var category = $stateParams.category;
+          return [];
+        }]
+      }
+    });
+
+    $rootScope.$on('$stateChangeError',
+    function(event, toState, toParams, fromState, fromParams, error){
+      console.log(error);
     });
 }
 
