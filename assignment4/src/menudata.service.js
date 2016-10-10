@@ -10,7 +10,7 @@ function MenuDataService($http) {
 
   service.getAllCategories = function() {
     return $http({url:'https://davids-restaurant.herokuapp.com/categories.json'}).then(function (result) {
-      console.log(result.data);
+      //console.log(result.data);
       return result.data;
     });
   };
