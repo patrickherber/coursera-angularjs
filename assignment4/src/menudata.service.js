@@ -13,9 +13,8 @@ function MenuDataService($http) {
   };
 
   service.getItemsForCategory = function(categoryShortName) {
-    return $http({url:'https://davids-restaurant.herokuapp.com/menu_items.json?category=' + categoryShortName}).then(function (result) {
-      return result.data.menu_items;
-    });
+    return $http({url:'https://davids-restaurant.herokuapp.com/menu_items.json?category=' + categoryShortName});
+    // return result.data.menu_items;
   };
 }
 
