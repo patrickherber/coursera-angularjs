@@ -25,10 +25,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       resolve: {
         categories: ['MenuDataService', function(MenuDataService) {
           // return [];
-          return MenuDataService.getAllCategories().then(function (result) {
-            console.log(result.data);
-            return result.data;
-          });
+          return MenuDataService.getAllCategories();
         }]
       }
     })
@@ -41,9 +38,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         items: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
           var category = $stateParams.category;
           // return [];
-          return MenuDataService.getItemsForCategory(category).then(function (result) {
-            return result.data.menu_items;
-          });
+          return MenuDataService.getItemsForCategory(category);
         }]
       }
     });
