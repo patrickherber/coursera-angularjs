@@ -4,8 +4,8 @@
 angular.module('MenuApp')
 .config(RoutesConfig);
 
-RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
-function RoutesConfig($stateProvider, $urlRouterProvider) {
+RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider','$rootScope'];
+function RoutesConfig($stateProvider, $urlRouterProvider, $rootScope) {
 
   // Redirect to tab 1 if no other URL matches
   $urlRouterProvider.otherwise('/');
