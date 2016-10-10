@@ -5,7 +5,7 @@ angular.module('MenuApp')
 .controller('HomeController', HomeController);
 
 function HomeController() {
-  ctrl = this;
+  var ctrl = this;
   var cancellers = [];
 
   ctrl.$onInit = function () {
