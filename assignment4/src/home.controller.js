@@ -4,7 +4,8 @@
 angular.module('MenuApp')
 .controller('HomeController', HomeController);
 
-function HomeController() {
+HomeController.$inject = ['$rootScope']
+function HomeController($rootScope) {
   var ctrl = this;
   var cancellers = [];
 
