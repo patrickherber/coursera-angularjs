@@ -5,25 +5,25 @@
   <form>
     <div class="form-group">
       <label for="firstName">First name</label>
-      <input type="text" class="form-control" id="firstName" placeholder="First name">
+      <input type="text" class="form-control" id="firstName" placeholder="First name" ng-map="ctrl.info.firstName"/>
     </div>
     <div class="form-group">
       <label for="lastName">Last name</label>
-      <input type="text" class="form-control" id="lastName" placeholder="Last name">
+      <input type="text" class="form-control" id="lastName" placeholder="Last name" ng-map="ctrl.info.lastName"/>
     </div>
     <div class="form-group">
       <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" placeholder="Email address">
+      <input type="email" class="form-control" id="email" placeholder="Email address" ng-map="ctrl.info.email"/>
     </div>
     <div class="form-group">
       <label for="phoneMobile">Phone mobile</label>
-      <input type="tel" class="form-control" id="phoneMobile" placeholder="Phone mobile">
+      <input type="tel" class="form-control" id="phoneMobile" placeholder="Phone mobile" ng-map="ctrl.info.phoneMobile">
     </div>
     <div class="form-group">
       <label for="favoriteDish">Favorite dish</label>
-      <input type="text" class="form-control" id="favoriteDish" placeholder="Favorite dish">
+      <input type="text" class="form-control" id="favoriteDish" placeholder="Favorite dish" ng-map="ctrl.info.favoriteDish">
     </div>
-    <button type="submit" class="btn btn-primary">Sign Up</button>
+    <button type="submit" class="btn btn-primary" ng-click="ctrl.signup();">Sign Up</button>
   </form>
 
 </div>
