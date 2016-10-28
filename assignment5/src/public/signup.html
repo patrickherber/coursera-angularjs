@@ -32,7 +32,6 @@
         <input type="tel" required="" class="form-control" name="phoneMobile" id="phoneMobile" placeholder="Phone mobile" ng-model="ctrl.info.phoneMobile"/>
         <div ng-show="form.$submitted || form.phoneMobile.$touched">
           <div ng-show="form.phoneMobile.$error.required">Tell us your phone number.</div>
-          <div ng-show="form.phoneMobile.$error.tel">This is not a valid phone number.</div>
         </div>
       </div>
       <div class="form-group">
