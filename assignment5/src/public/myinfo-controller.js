@@ -12,6 +12,7 @@ function MyInfoController(InfoService) {
 
   ctrl.unsubscribe = function() {
     service.deleteInfo();
+    ctrl.info = service.getInfo();
   }
   ctrl.hasSignedUp = function() {
     return ctrl.info.lastName;
