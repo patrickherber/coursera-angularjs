@@ -15,7 +15,7 @@ function MyInfoController(InfoService) {
     ctrl.info = service.getInfo();
   }
   ctrl.hasSignedUp = function() {
-    return ctrl.info.lastName;
+    return ctrl.info.surname;
   }
 }
 

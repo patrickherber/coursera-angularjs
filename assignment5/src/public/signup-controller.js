@@ -8,13 +8,13 @@ SignupController.$inject = ['InfoService'];
 function SignupController(InfoService) {
   var ctrl = this;
   var service = InfoService;
-  ctrl.info = service.getInfo();
+  ctrl.info = angular.copy(service.getInfo());
 
   ctrl.signup = function() {
     service.saveInfo(ctrl.info);
   }
   ctrl.hasSignedUp = function() {
-    return ctrl.info.lastName;
+    return ctrl.info.surname;
   }
 }
 
