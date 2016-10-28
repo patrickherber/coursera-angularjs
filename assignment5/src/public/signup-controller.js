@@ -13,6 +13,9 @@ function SignupController(InfoService) {
   ctrl.signup = function() {
     service.saveInfo(ctrl.info);
   }
+  ctrl.hasSignedUp = function() {
+    return ctrl.info.lastName;
+  }
 }
 
 })();

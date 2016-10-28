@@ -14,6 +14,9 @@ function InfoService() {
   service.saveInfo = function(updatedInfo) {
     service.info = updatedInfo;
   }
+  service.deleteInfo = function() {
+    service.info = {};
+  }
 }
 
 })();
