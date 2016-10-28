@@ -7,7 +7,7 @@ angular.module('public')
 SignupController.$inject = ['InfoService'];
 function SignupController(InfoService) {
   var ctrl = this;
-  ctrl.service = service;
+  ctrl.service = InfoService;
   ctr.info = service.getInfo();
 
   ctrl.signup = function() {
