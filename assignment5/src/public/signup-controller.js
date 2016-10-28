@@ -13,6 +13,8 @@ function SignupController(InfoService) {
 
   ctrl.signup = function() {
     service.saveInfo(ctrl.info);
+    ctrl.info = angular.copy(service.getInfo());
+    var signedUp = ctrl.info.surname;
   }
   ctrl.hasSignedUp = function() {
     return signedUp;
