@@ -13,7 +13,6 @@ function InfoService() {
   }
   service.saveInfo = function(updatedInfo) {
     service.info = updatedInfo;
-    console.log('Updated info', service.info);
   }
   service.deleteInfo = function() {
     service.info = {};

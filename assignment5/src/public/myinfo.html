@@ -1,5 +1,33 @@
 <div class="container">
 
-  <h2 class="text-center">My Info</h2>
+  <div ng-if="!ctrl.hasSignedUp();">
+    <h2 class="text-center">You don't have signed up</h2>
+  </div>
+
+  <div ng-if="ctrl.hasSignedUp();">
+    <h2 class="text-center">My Info</h2>
+
+    <div class="form-group">
+      <div>First name</div>
+      <div>{{ctrl.info.firstName}}</div>
+    </div>
+    <div class="form-group">
+      <div>Last name</div>
+      <div>{{ctrl.info.lastName}}</div>
+    </div>
+    <div class="form-group">
+      <div>Email address</div>
+      <div>{{ctrl.info.email}}</div>
+    </div>
+    <div class="form-group">
+      <div>Phone mobile</div>
+      <div>{{ctrl.info.phoneMobile}}</div>
+    </div>
+    <div class="form-group">
+      <div>Favorite dish</div>
+      <div>{{ctrl.info.favoriteDish}}</div>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click="ctrl.unsubscribe();">Unsubscribe</button>
+  </div>
 
 </div>
