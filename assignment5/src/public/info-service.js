@@ -7,6 +7,7 @@ angular.module('public')
 function InfoService() {
   var service = this;
   service.info = {};
+  service.favoriteDish = null;
 
   service.getInfo = function() {
     return service.info;
@@ -16,6 +17,9 @@ function InfoService() {
   }
   service.deleteInfo = function() {
     service.info = {};
+  }
+  service.saveFavoriteDish = function(menuItem) {
+    service.favoriteDish = menuItem;
   }
 }
 
