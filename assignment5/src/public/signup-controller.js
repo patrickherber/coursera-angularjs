@@ -13,7 +13,7 @@ function SignupController(InfoService,ApiPath,$http) {
 
   ctrl.signup = function() {
     if (ctrl.info.surname && ctrl.info.email && ctrl.info.phoneMobile && ctrl.info.favoriteDish) {
-      var url = ApiPath + '/menu_items/' + ctrl.info.favoriteDish.toUppercase() + '.json';
+      var url = ApiPath + '/menu_items/' + ctrl.info.favoriteDish.toUpperCase() + '.json';
       console.log(url);
       var promise = $http({
         method: 'GET',
