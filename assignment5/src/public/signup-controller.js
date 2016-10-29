@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('SignupController', SignupController);
 
-SignupController.$inject = ['InfoService','ApiPath'];
-function SignupController(InfoService,ApiPath) {
+SignupController.$inject = ['InfoService','ApiPath','$http'];
+function SignupController(InfoService,ApiPath,$http) {
   var ctrl = this;
   var service = InfoService;
   ctrl.info = angular.copy(service.getInfo());
