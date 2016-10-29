@@ -40,7 +40,7 @@
         <div ng-show="form.$submitted || form.favoriteDish.$touched">
           <div ng-show="form.favoriteDish.$error.required">Tell us your favorite dish.</div>
         </div>
-        <div ng-show="ctrl.favoriteDishError">{{favoriteDishError}}</div>
+        <div ng-show="ctrl.favoriteDishError">{{ctrl.favoriteDishError}}</div>
       </div>
       <button type="submit" class="btn btn-primary" ng-click="ctrl.signup();">Sign Up</button>
     </form>

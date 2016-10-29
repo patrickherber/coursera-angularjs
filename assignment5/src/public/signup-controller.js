@@ -9,6 +9,7 @@ function SignupController(InfoService,ApiPath,$http) {
   var ctrl = this;
   var service = InfoService;
   ctrl.info = angular.copy(service.getInfo());
+  ctrl.favoriteDishError = null;
   var signedUp = ctrl.info.surname;
 
   ctrl.signup = function() {
