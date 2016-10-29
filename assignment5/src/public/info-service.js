@@ -17,10 +17,14 @@ function InfoService() {
   }
   service.deleteInfo = function() {
     service.info = {};
+    service.favoriteDish = null;
   }
   service.saveFavoriteDish = function(menuItem) {
     service.favoriteDish = menuItem;
   }
+    service.getFavoriteDish = function() {
+      return service.favoriteDish;
+    }
 }
 
 })();

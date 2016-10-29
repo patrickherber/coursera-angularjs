@@ -13,7 +13,7 @@ function SignupController(InfoService,ApiPath,$http) {
 
   ctrl.signup = function() {
     if (ctrl.info.surname && ctrl.info.email && ctrl.info.phoneMobile && ctrl.info.favoriteDish) {
-      var url = ApiPath + '/menu_items/' + ctrl.info.favoriteDish + '.json';
+      var url = ApiPath + '/menu_items/' + ctrl.info.favoriteDish.toUppercase() + '.json';
       console.log(url);
       var promise = $http({
         method: 'GET',
@@ -27,7 +27,7 @@ function SignupController(InfoService,ApiPath,$http) {
         signedUp = true;
       })
       .catch(function (error) {
-        console.log(error);
+        ctrl.favoriteDishError = 'No such menu number exists';
       })
 
 

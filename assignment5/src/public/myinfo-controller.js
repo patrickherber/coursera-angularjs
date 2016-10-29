@@ -9,6 +9,7 @@ function MyInfoController(InfoService) {
   var ctrl = this;
   var service = InfoService;
   ctrl.info = service.getInfo();
+  ctrl.favoriteDish = service.getFavoriteDish();
 
   ctrl.unsubscribe = function() {
     service.deleteInfo();

@@ -25,7 +25,10 @@
     </div>
     <div class="form-group">
       <div>Favorite dish</div>
-      <div>{{ctrl.info.favoriteDish}}</div>
+      <div>
+        <menu-item menu-item="ctrl.favoriteDish.name">
+        </menu-item>
+      </div>
     </div>
     <button class="btn btn-primary" ng-click="ctrl.unsubscribe();">Unsubscribe</button>
   </div>
