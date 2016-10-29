@@ -22,9 +22,9 @@ function InfoService() {
   service.saveFavoriteDish = function(menuItem) {
     service.favoriteDish = menuItem;
   }
-    service.getFavoriteDish = function() {
-      return service.favoriteDish;
-    }
+  service.getFavoriteDish = function() {
+    return service.favoriteDish;
+  }
 }
 
 })();
