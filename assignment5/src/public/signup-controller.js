@@ -12,9 +12,11 @@ function SignupController(InfoService) {
   var signedUp = ctrl.info.surname;
 
   ctrl.signup = function() {
-    service.saveInfo(ctrl.info);
-    ctrl.info = angular.copy(service.getInfo());
-    signedUp = ctrl.info.surname;
+    if (ctrl.surname && ctrl.email && ctrl.phoneMobile && ctrl.favoriteDish) {
+      service.saveInfo(ctrl.info);
+      ctrl.info = angular.copy(service.getInfo());
+      signedUp = ctrl.info.surname;
+    }
   }
   ctrl.hasSignedUp = function() {
     return signedUp;
